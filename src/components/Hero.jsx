@@ -1,12 +1,17 @@
-import { Root, Title, Content } from "./Hero.styles";
+import PropTypes from "prop-types";
+import { Root, Content, Container } from "./styles/Hero.styles";
 
-const Hero = ({ image, title, children }) => (
+const Hero = ({ image, children }) => (
   <Root image={image}>
-    <section>
-      <Title>{title}</Title>
+    <Container>
       <Content>{children}</Content>
-    </section>
+    </Container>
   </Root>
 );
+
+Hero.propTypes = {
+  image: PropTypes.string,
+  children: PropTypes.node,
+};
 
 export default Hero;
