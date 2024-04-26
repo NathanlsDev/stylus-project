@@ -1,10 +1,12 @@
-import Hero from "../components/Hero";
-import BgImage from "./assets/road.webp";
-import BgTravelImage from "./assets/travel-road.webp";
-import Heading from "../components/Heading";
+import { text } from "@storybook/addon-knobs"
+
+import Hero from "./Hero";
+import BgImage from "../stories/assets/road.webp";
+import BgTravelImage from "../stories/assets/travel-road.webp";
+import Heading from "./Heading";
 
 export default {
-  title: "Hero",
+  title: "Components | Hero",
   component: Hero,
 };
 
@@ -18,9 +20,8 @@ export const usage = () => (
 export const withList = () => (
   <Hero image={BgTravelImage}>
     <Heading>
-      <h1>
-        Ganhe sua <strong>liberdade</strong>
-        <br /> de ir e vir
+      <h1>{text('Title', 'Ganhe sua liberdade de ir e vir')}
+        
       </h1>
     </Heading>
     <ul>
